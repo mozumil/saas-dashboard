@@ -1,4 +1,6 @@
 import StatCard from "@/components/StatCard";
+import RecentOrders from "@/components/RecentOrders";
+import TopSellingProducts from "@/components/TopSellingProducts";
 
 export default function Home() {
 
@@ -13,6 +15,39 @@ export default function Home() {
     { name: "Nike Shoes Black Pattern", price: "$87" },
     { name: "iPhone 12", price: "$987" },
   ];
+
+  const orders = [
+  {
+    trackingNo: "#876364",
+    productName: "Camera Lens",
+    price: "$178",
+    totalOrder: "325",
+    totalAmount: "$1,46,660",
+  },
+  {
+    trackingNo: "#876368",
+    productName: "Black Sleep Dress",
+    price: "$14",
+    totalOrder: "53",
+    totalAmount: "$46,660",
+  },
+  {
+    trackingNo: "#876412",
+    productName: "Argan Oil",
+    price: "$21",
+    totalOrder: "78",
+    totalAmount: "$3,46,676",
+  },
+  {
+    trackingNo: "#876621",
+    productName: "EAU DE Parfum",
+    price: "$32",
+    totalOrder: "98",
+    totalAmount: "$3,46,981",
+  },
+];
+
+
 
   return (
     <div className="flex min-h-screen bg-slate-50">
@@ -56,70 +91,11 @@ export default function Home() {
         
         <section className="grid grid-cols-2 gap-4">
 
-          <div className="border h-80 p-4 rounded">
-            <h2 className="font-bold mb-4">Recent Orders</h2>
-            <table className="w-full text-left">
-              <thead>
-                <tr>
-                  <th className="pb-3 text-sm text-gray-500 font-medium">Tracking no</th>
-                  <th className="pb-3 text-sm text-gray-500 font-medium">Product Name</th>
-                  <th className="pb-3 text-sm text-gray-500 font-medium">Price</th>
-                  <th className="pb-3 text-sm text-gray-500 font-medium">Total Order</th>
-                  <th className="pb-3 text-sm text-gray-500 font-medium">Total Amount</th>
-                </tr>
-              </thead>
+          <RecentOrders orders={orders} />
+          
+          <TopSellingProducts products={topSellingProducts} />
 
-              <tbody>
-                <tr>
-                  <td className="py-2">#876364</td>
-                  <td className="py-2">Camera Lens</td>
-                  <td className="py-2">$178</td>
-                  <td className="py-2">325</td>
-                  <td className="py-2">$1,46,660</td>
-                </tr>
-
-                <tr>
-                  <td className="py-2">#876368</td>
-                  <td className="py-2">Black Sleep Dress</td>
-                  <td className="py-2">$14</td>
-                  <td className="py-2">53</td>
-                  <td className="py-2">$46,660</td>
-                </tr>
-
-                <tr>
-                  <td className="py-2">#876412</td>
-                  <td className="py-2">Argan Oil</td>
-                  <td className="py-2">$21</td>
-                  <td className="py-2">78</td>
-                  <td className="py-2">$3,46,676</td>
-                </tr>
-
-                <tr>
-                  <td className="py-2">#876621</td>
-                  <td className="py-2">EAU DE Parfum</td>
-                  <td className="py-2">$32</td>
-                  <td className="py-2">98</td>
-                  <td className="py-2">$3,46,981</td>
-                </tr>
-              </tbody>
-
-            </table>
-          </div>
-
-          <div className="border h-80 p-4 rounded bg-white text-black">
-            <h2 className="font-bold mb-4">
-              Top Selling Products
-            </h2>
-
-            <div className="space-y-4">
-              {topSellingProducts.map((product) => (
-               <div key={product.name}>
-                 <h3>{product.name}</h3>
-                 <p className="font-bold">{product.price}</p>
-               </div>
-              ))}
-            </div>
-          </div>
+         
         </section>
       </main>
 
