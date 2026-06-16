@@ -1,7 +1,9 @@
 import StatCard from "@/components/StatCard";
 import RecentOrders from "@/components/RecentOrders";
 import TopSellingProducts from "@/components/TopSellingProducts";
-
+import Sidebar from "@/components/Sidebar";
+import DashboardHeader from "@/components/DashboardHeader";
+import Card from "@/components/Card";
 export default function Home() {
 
   const stats = [
@@ -47,34 +49,17 @@ export default function Home() {
   },
 ];
 
-
-
   return (
     <div className="flex min-h-screen bg-slate-50">
-      <aside className="w-56 bg-gray-100 text-gray-800 p-4">
-        <nav className="flex flex-col gap-4">
-          <a href="#">Dashboard</a>
-          <a href="#">Analytics</a>
-          <a href="#">Invoice</a>
-          <a href="#">Schedule</a>
-          <a href="#">Calendar</a>
-          <a href="#">Messages</a>
-          <a href="#">Notifications</a>
-          <a href="#">Settings</a>
-        </nav>
-      </aside>
+
+      <Sidebar />
+      
 
       <main className="flex-1 p-4 space-y-4">
-        <header className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Dashboard</h1>
+        
+        <DashboardHeader />
 
-          <div className="flex gap-4">
-            <button className="border px-3 py-2 rounded">15-06-2026</button>
-            <button className="border px-3 py-2 rounded">10-10-2026</button>
-          </div>
-        </header>
-
-        <section className="grid grid-cols-4 gap-4">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
          {stats.map((stat) => (
           <StatCard
            key={stat.label}
@@ -84,12 +69,17 @@ export default function Home() {
         ))}
         </section>
         
-        <section className="grid grid-cols-3 gap-4">
-          <div className="bg-white text-black border rounded p-4 shadow-sm col-span-2 h-64">Analytics chart</div>
-          <div className="bg-white text-black border rounded p-4 shadow-sm h-64">Report Chart</div>
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <Card className="lg:col-span-2 h-64">
+            Analytics chart
+          </Card>
+
+          <Card className="h-64">
+            Report Chart
+          </Card>
         </section>
         
-        <section className="grid grid-cols-2 gap-4">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
           <RecentOrders orders={orders} />
           
