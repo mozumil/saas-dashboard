@@ -1,4 +1,19 @@
+import StatCard from "@/components/StatCard";
+
 export default function Home() {
+
+  const stats = [
+    { value: "178+", label: "Save Products" },
+    { value: "20+", label: "Stock Products" },
+    { value: "190+", label: "Sales Products" },
+    { value: "12+", label: "Job Application" },
+  ];
+  
+  const topSellingProducts = [
+    { name: "Nike Shoes Black Pattern", price: "$87" },
+    { name: "iPhone 12", price: "$987" },
+  ];
+
   return (
     <div className="flex min-h-screen bg-slate-50">
       <aside className="w-56 bg-gray-100 text-gray-800 p-4">
@@ -25,27 +40,13 @@ export default function Home() {
         </header>
 
         <section className="grid grid-cols-4 gap-4">
-          
-          <div className="bg-white text-black border rounded p-4 shadow-sm">
-            <h2 className="text-2xl font-bold">178+</h2>
-            <p>Save Products</p>
-          </div>
-
-          <div className="bg-white text-black border rounded p-4 shadow-sm">
-            <h2 className="text-2xl font-bold">20+</h2>
-            <p>Stock Products</p>
-          </div>
-          
-          <div className="bg-white text-black border rounded p-4 shadow-sm">
-            <h2 className="text-2xl font-bold">190+</h2>
-            <p>Sales Products</p>
-          </div>
-
-          <div className="bg-white text-black border rounded p-4 shadow-sm">
-            <h2 className="text-2xl font-bold">12+</h2>
-            <p>Job application</p>
-          </div>
-
+         {stats.map((stat) => (
+          <StatCard
+           key={stat.label}
+           value={stat.value}
+           label={stat.label}
+          />
+        ))}
         </section>
         
         <section className="grid grid-cols-3 gap-4">
@@ -111,16 +112,12 @@ export default function Home() {
             </h2>
 
             <div className="space-y-4">
-              <div>
-               <h3>Nike Shoes Black Pattern</h3>
-                 <p className="font-bold">$87</p>
-              </div>
-
-              <div>
-                <h3>iPhone 12</h3>
-                <p className="font-bold">$987</p>
-              </div>
-
+              {topSellingProducts.map((product) => (
+               <div key={product.name}>
+                 <h3>{product.name}</h3>
+                 <p className="font-bold">{product.price}</p>
+               </div>
+              ))}
             </div>
           </div>
         </section>
@@ -129,3 +126,4 @@ export default function Home() {
     </div>
   )   
 }
+
