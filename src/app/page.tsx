@@ -51,7 +51,7 @@ export default function Home() {
 ];
 
   return (
-    <div className="flex min-h-screen bg-slate-50">
+    <div className="flex min-h-screen bg-gray-100">
 
       <Sidebar />
       
@@ -72,11 +72,15 @@ export default function Home() {
         
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <Card className="lg:col-span-2 h-64">
-            Analytics chart
+            <div className="h-full flex items-center justify-center text-gray-400">
+               Reports Chart Placeholder
+            </div>
           </Card>
 
           <Card className="h-64">
-            Report Chart
+            <div className="h-full flex items-center justify-center text-gray-400">
+               Analytics Chart Placeholder
+            </div>
           </Card>
         </section>
         

@@ -20,7 +20,10 @@ const menuItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="w-56 bg-gray-100 text-gray-800 p-4">
+    <aside className="w-64 bg-white border-r border-gray-200 p-6">
+        <h2 className="text-xl font-bold mb-8 text-gray-600">
+         LOGO
+        </h2>
       <nav className="flex flex-col gap-4">
         {menuItems.map((item) => {
           const Icon = item.icon;
@@ -29,7 +32,7 @@ export default function Sidebar() {
             <a
               key={item.name}
               href="#"
-              className="flex items-center gap-2 px-3 py-2 rounded hover:bg-gray-200"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-black transition"
             >
               <Icon size={18} />
               {item.name}

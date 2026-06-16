@@ -40,12 +40,12 @@ export default function RecentOrders({
 
         <tbody>
           {orders.map((order) => (
-            <tr key={order.trackingNo}>
-              <td className="py-2">{order.trackingNo}</td>
-              <td className="py-2">{order.productName}</td>
-              <td className="py-2">{order.price}</td>
-              <td className="py-2">{order.totalOrder}</td>
-              <td className="py-2">{order.totalAmount}</td>
+            <tr key={order.trackingNo} className="border-t border-gray-100">
+              <td className="py-3">{order.trackingNo}</td>
+              <td className="py-3">{order.productName}</td>
+              <td className="py-3">{order.price}</td>
+              <td className="py-3">{order.totalOrder}</td>
+              <td className="py-3">{order.totalAmount}</td>
             </tr>
           ))}
         </tbody>

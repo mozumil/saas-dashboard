@@ -9,7 +9,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`bg-white text-black border rounded p-4 shadow-sm ${className}`}
+      className={`bg-white rounded-xl border border-gray-200 p-5 shadow-sm ${className}`}
     >
       {children}
     </div>

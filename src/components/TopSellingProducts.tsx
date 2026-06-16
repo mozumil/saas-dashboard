@@ -16,8 +16,13 @@ export default function TopSellingProducts({
 
       <div className="space-y-4">
         {products.map((product) => (
-          <div key={product.name}>
-            <h3>{product.name}</h3>
+          <div
+            key={product.name}
+            className="border-b border-gray-100 pb-3"
+          >
+            <h3 className="font-medium">
+               {product.name}
+            </h3>
             <p className="font-bold">{product.price}</p>
           </div>
         ))}
