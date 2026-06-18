@@ -20,19 +20,19 @@ export default function RecentOrders({
       <table className="w-full text-left">
         <thead>
           <tr>
-            <th className="pb-3 text-sm text-gray-500 font-medium">
+            <th className="pb-3 text-xs uppercase tracking-wider text-gray-500">
               Tracking no
             </th>
-            <th className="pb-3 text-sm text-gray-500 font-medium">
+            <th className="pb-3 text-xs uppercase tracking-wider text-gray-500">
               Product Name
             </th>
-            <th className="pb-3 text-sm text-gray-500 font-medium">
+            <th className="pb-3 text-xs uppercase tracking-wider text-gray-500">
               Price
             </th>
-            <th className="pb-3 text-sm text-gray-500 font-medium">
+            <th className="pb-3 text-xs uppercase tracking-wider text-gray-500">
               Total Order
             </th>
-            <th className="pb-3 text-sm text-gray-500 font-medium">
+            <th className="pb-3 text-xs uppercase tracking-wider text-gray-500">
               Total Amount
             </th>
           </tr>
