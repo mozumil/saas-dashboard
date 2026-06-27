@@ -43,7 +43,7 @@ const menuItems = [
   {
     name: "Settings",
     icon: Settings,
-    href: "#",
+    href: "/settings",
   },
 ];
 
