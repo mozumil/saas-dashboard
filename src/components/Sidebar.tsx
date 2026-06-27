@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   LayoutDashboard,
   BarChart3,
@@ -9,13 +10,41 @@ import {
 } from "lucide-react";
 
 const menuItems = [
-  { name: "Dashboard", icon: LayoutDashboard },
-  { name: "Analytics", icon: BarChart3 },
-  { name: "Invoice", icon: FileText },
-  { name: "Calendar", icon: Calendar },
-  { name: "Messages", icon: MessageSquare },
-  { name: "Notifications", icon: Bell },
-  { name: "Settings", icon: Settings },
+  {
+    name: "Dashboard",
+    icon: LayoutDashboard,
+    href: "/",
+  },
+  {
+    name: "Analytics",
+    icon: BarChart3,
+    href: "/analytics",
+  },
+  {
+    name: "Invoice",
+    icon: FileText,
+    href: "#",
+  },
+  {
+    name: "Calendar",
+    icon: Calendar,
+    href: "#",
+  },
+  {
+    name: "Messages",
+    icon: MessageSquare,
+    href: "#",
+  },
+  {
+    name: "Notifications",
+    icon: Bell,
+    href: "#",
+  },
+  {
+    name: "Settings",
+    icon: Settings,
+    href: "#",
+  },
 ];
 
 export default function Sidebar() {
@@ -29,14 +58,14 @@ export default function Sidebar() {
           const Icon = item.icon;
 
           return (
-            <a
+            <Link
               key={item.name}
-              href="#"
+              href={item.href}
               className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition"
             >
               <Icon size={18} />
               {item.name}
-            </a>
+            </Link>
           );
         })}
       </nav>
